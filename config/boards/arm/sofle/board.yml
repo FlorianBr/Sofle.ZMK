@@ -1,0 +1,9 @@
+board:
+  - name: sofle_left
+    full_name: Sofle Left
+    socs:
+      - name: nrf52840
+  - name: sofle_right
+    full_name: Sofle Right
+    socs:
+      - name: nrf52840
