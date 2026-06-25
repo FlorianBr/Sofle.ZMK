@@ -22,7 +22,7 @@ manifest:
     # Prospector Dongle
     - name: prospector-zmk-module
       remote: prospector
-      revision: v2.2.1
+      revision: v1.1.1
       path: modules/prospector-zmk-module
     # Araska Anim on right display
     - name: nice-view

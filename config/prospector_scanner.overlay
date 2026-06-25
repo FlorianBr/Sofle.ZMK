@@ -1,0 +1,30 @@
+#include <dt-bindings/gpio/gpio.h>
+
+/*
+ * Virtual encoder for the dongle (ZMK split central).
+ * D1 (P0.03) and D2 (P0.28) are unused by the prospector_scanner shield.
+ * The pins are pulled up and stable — no physical encoder is connected here.
+ * The EC11 driver initialises them as edge-interrupt inputs but they will
+ * never trigger; actual encoder events arrive via BLE from sofle_left.
+ *
+ * ZMK needs zmk,sensors to be present on the central so it can look up
+ * sensor_bindings[layer][0] when it receives a split sensor event.
+ */
+/ {
+    virtual_encoder: encoder_virtual {
+        compatible = "alps,ec11";
+        a-gpios = <&xiao_d 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&xiao_d 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        steps = <80>;
+    };
+
+    sensors: sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&virtual_encoder>;
+        triggers-per-step = <4>;
+    };
+
+    chosen {
+        zmk,sensors = &sensors;
+    };
+};
