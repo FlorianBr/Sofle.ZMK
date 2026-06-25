@@ -1,7 +1,11 @@
 include:
-  - board: nice_nano_v2
+  - board: seeeduino_xiao_ble
     shield: settings_reset
-    artifact-name: sofle_reset
+    artifact-name: dongle_reset
+
+  - board: seeeduino_xiao_ble
+    shield: prospector_scanner
+    artifact-name: sofle_dongle
 
   - board: sofle_left
     shield: nice_view_adapter nice_view_custom

@@ -8,9 +8,6 @@ if BOARD_SOFLE_LEFT
 config ZMK_KEYBOARD_NAME
     default "Sofle"
 
-config ZMK_SPLIT_ROLE_CENTRAL
-    default y
-
 endif # BOARD_SOFLE_LEFT
 
 
