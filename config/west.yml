@@ -13,16 +13,16 @@ manifest:
     # ZMK Base Firmware
     - name: zmk
       remote: zmkfirmware
-      revision: v0.3
+      revision: v0.3.0
       import: app/west.yml
     # ZMK-Unicode: For german unicode chars
     - name: zmk-unicode
       remote: urob
-      revision: v0.3 # Must match the ZMK main
+      revision: v0.3.0 # Must match the ZMK main
     # Prospector Dongle
     - name: prospector-zmk-module
       remote: prospector
-      revision: v1.1.1
+      revision: v2.2.1
       path: modules/prospector-zmk-module
     # Araska Anim on right display
     - name: nice-view
